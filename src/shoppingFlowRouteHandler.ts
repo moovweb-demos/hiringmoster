@@ -11,9 +11,10 @@ const handler: RouteHandler = async ({ cache, removeUpstreamResponseHeader, setR
   setResponseHeader('cache-control', 'public, max-age=86400') // change the cache headers to be cachable
 
   // ENTER YOUR WEBSITE DOMAIN NAME //
-  updateResponseHeader('location', /https:\/\/www.layer0.co\//gi, '/')
+  updateResponseHeader('location', /https:\/\/hiring.monster.com\//gi, '/')
 
   proxy('origin', { transformResponse: transform }) // Origin pages transformations
+
 }
 
 export default handler

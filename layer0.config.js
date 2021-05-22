@@ -3,8 +3,8 @@ module.exports = {
   connector: '@layer0/starter',
   backends: {
     origin: {
-      domainOrIp: 'www.layer0.co',
-      hostHeader: 'www.layer0.co',
+      hostHeader: 'hiring.monster.com',
+      domainOrIp: 'hiring.monster.com',
     },
   },
 }

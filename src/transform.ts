@@ -18,9 +18,30 @@ export default function transform(response: Response, request: Request) {
       <script src="/main.js" defer="defer"></script>
     `)
 
-    // your transformations go here
-    // ...
-    // ...
+    $('head').append(`
+      <style>
+        .l0-hidden {
+          display: none !important;
+        }
+      </style>
+    `)
+
+    // Relativise links
+    $('a[href^="https://hiring.monster.com"]').map((i, el) => {
+      var link = $(el).attr('href') || '';
+      $(el).attr('href', link.replace('https://hiring.monster.com/', '/'));
+    })
+    $('a[href^="http://hiring.monster.com"]').map((i, el) => {
+      var link = $(el).attr('href') || '';
+      $(el).attr('href', link.replace('http://hiring.monster.com', '/'));
+    })
+
+    // Hero image
+    $('.content-hero.track header[data-mobilebackground]').map((i, el) => {
+      var url = $(el).attr('data-mobilebackground') || '';
+      $(el).attr('style', `background-image: url("${url}");`)
+      $(el).append(`<img class="l0-hero l0-hidden" src="${url}" />`)
+    })
 
     response.body = $.html()
   }

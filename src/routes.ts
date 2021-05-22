@@ -15,8 +15,7 @@ export default new Router()
   // PDP page
   .match('/products/:path*', shoppingFlowRouteHandler)
 
-  // example route for cacheable assets:
-  .match('/images/:path*', ({ cache, proxy }) => {
+  .match('/empmerch-resources/:path*', ({ cache, proxy }) => {
     cache(CACHE_ASSETS)
     return proxy('origin')
   })
