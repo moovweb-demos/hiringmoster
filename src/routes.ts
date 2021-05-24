@@ -12,8 +12,9 @@ export default new Router()
   // PLP page
   .match('/collections/:path*', shoppingFlowRouteHandler)
 
-  // PDP page
+  // Article
   .match('/products/:path*', shoppingFlowRouteHandler)
+  .match('/products/', shoppingFlowRouteHandler)
 
   .match('/empmerch-resources/:path*', ({ cache, proxy }) => {
     cache(CACHE_ASSETS)
