@@ -4,7 +4,7 @@ module.exports = {
   backends: {
     origin: {
       hostHeader: 'hiring.monster.com',
-      domainOrIp: 'hiring.all.gslb.monster.com',
+      domainOrIp: 'hiring.monster.com',
     },
   },
 }

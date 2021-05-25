@@ -26,6 +26,8 @@ export default function transform(response: Response, request: Request) {
       </style>
     `)
 
+    $('*').attr('layer0', 'layer0')
+
     // Relativise links
     $('a[href^="https://hiring.monster.com"]').map((i, el) => {
       var link = $(el).attr('href') || '';
